@@ -1,11 +1,14 @@
 #include "Monstre.cpp"
+#include "Mage.cpp"
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 
 int main(){
 
+    
     Monstre myMonstre = Monstre("Didier");
     Monstre myMonstre2 = Monstre("Jean");
 
