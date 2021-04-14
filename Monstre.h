@@ -20,7 +20,8 @@ class Monstre{
 
         int getAttaque();
 
-       
+
+
         void resetVie(int vie);
 
         void resetFatigue();

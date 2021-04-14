@@ -8,57 +8,78 @@
 
 int main(){
 
-    
-    Monstre myMonstre = Monstre("Didier");
-    Monstre myMonstre2 = Monstre("Jean");
+    Mage Mage1 = Mage();
+    Mage Mage2 = Mage();
+
+    Monstre Didier1 = Monstre("Didier1");
+    Monstre Didier2 = Monstre("Didier2");
+    Monstre Didier3 = Monstre("Didier3");
+
+    Monstre Jean1 = Monstre("Jean1");
+    Monstre Jean2 = Monstre("Jean2");
+    Monstre Jean3 = Monstre("Jean3");
+
 
     int vie = 0;
+    std::string choisi ;
     
 
-    myMonstre.affiche();
-    myMonstre2.affiche();
- 
-    while(myMonstre.mort() ==false && myMonstre2.mort() ==false)
-    {
+    Mage1.affiche();
 
-        if(myMonstre.getFatigue()== true)
+    std::cout<<"Mage 1 voulez vous invoquer ?";
+    
+    std::cin>>choisi;
+
+
+
+    if(choisi == "oui")
+    {
+        Mage1.invoque();
+    }
+
+    std::cout<<"attaquer";
+
+
+    Didier1.affiche();
+    Jean1.affiche();
+ 
+
+        if(Didier1.getFatigue()== true)
         {
             std::cout<<"peut pas attaquer car epuiser"<<std::endl;
         }
         else
         {
-            vie = (myMonstre2.getVie() - myMonstre.getAttaque());
-            myMonstre2.resetVie(vie);
+            vie = (Jean1.getVie() - Didier1.getAttaque());
+            Jean1.resetVie(vie);
 
-            vie = (myMonstre.getVie() - myMonstre2.getAttaque());
-            myMonstre.resetVie(vie);
+            vie = (Didier1.getVie() - Jean1.getAttaque());
+            Didier1.resetVie(vie);
         }
-        myMonstre.resetFatigue();
+        Didier1.resetFatigue();
 
 
         /////////////////////////////////////////////////
 
         
-        if(myMonstre2.getFatigue()== true)
+        if(Jean1.getFatigue()== true)
         {
             std::cout<<"peut pas attaquer car epuiser"<<std::endl;
         }
         else
         {
-            vie = (myMonstre.getVie() - myMonstre2.getAttaque());
-            myMonstre.resetVie(vie);
+            vie = (Didier1.getVie() - Jean1.getAttaque());
+            Didier1.resetVie(vie);
 
-            vie = (myMonstre2.getVie() - myMonstre.getAttaque());
-            myMonstre2.resetVie(vie);
+            vie = (Jean1.getVie() - Didier1.getAttaque());
+            Jean1.resetVie(vie);
         }
-        myMonstre2.resetFatigue();
+        Jean1.resetFatigue();
 
 
-        myMonstre.affiche();
-        myMonstre2.affiche();
-    }
+        Didier1.affiche();
+        Jean1.affiche();
 
-    std::cout<<"un des monstre est mort";
 
     return 0;
 }

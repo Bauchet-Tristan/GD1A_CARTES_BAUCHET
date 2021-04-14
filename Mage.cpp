@@ -18,6 +18,10 @@
     }
 
     void Mage::affiche(){
-        std::cout<<_nom<<"\npoint de vie"<<_pointVie<<"\nzone de jeu "<<_zoneJeu<<"\n\n"<<std::endl;
+        std::cout<<_nom<<"\npoint de vie"<<_pointVie<<"\nzone de jeu"<<_zoneJeu<<"\n\n"<<std::endl;
+
     }
 
+    void Mage::invoque(){
+        _zoneJeu = _zoneJeu+1;
+    }
