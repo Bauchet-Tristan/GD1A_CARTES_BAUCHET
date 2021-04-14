@@ -11,7 +11,6 @@
 
     }
 
-
     bool Monstre::getFatigue(){
         return _epuiser;
     } 
@@ -23,17 +22,37 @@
     int Monstre::getAttaque(){
         return _attaque;
     }
-        
 
 
-
-
-    void Monstre::affiche(){
-        std::cout<<_nom<<"\npoint de vie"<<_pointVie<<"\nattaque"<<_attaque<<"\ndisponible"<<_epuiser<<std::endl;
+    void Monstre::resetVie(int vie){
+        _pointVie = vie;
     }
 
-    void Monstre::mort(){
 
+    void Monstre::resetFatigue(){
+        if(_epuiser == false)
+        {
+            _epuiser = true;
+        }
+        else
+        {
+            _epuiser = false;
+        }
+    }
+
+    void Monstre::affiche(){
+        std::cout<<_nom<<"\npoint de vie"<<_pointVie<<"\nattaque"<<_attaque<<"\ndisponible"<<_epuiser<<"\n\n"<<std::endl;
+    }
+
+    bool Monstre::mort(){
+        if(_pointVie <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 

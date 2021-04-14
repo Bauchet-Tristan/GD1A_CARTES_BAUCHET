@@ -21,12 +21,13 @@ class Monstre{
         int getAttaque();
 
        
+        void resetVie(int vie);
 
+        void resetFatigue();
 
         void affiche();
 
-
-        void mort();
+        bool mort();
         
         Monstre();
 
