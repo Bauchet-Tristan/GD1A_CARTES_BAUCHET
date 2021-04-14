@@ -34,7 +34,7 @@ int main(){
 
     if(choisi == "oui")
     {
-        Mage1.invoque();
+        Mage1.invoque();  
     }
 
     std::cout<<"attaquer";
